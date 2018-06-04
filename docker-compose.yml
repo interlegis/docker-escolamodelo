@@ -1,0 +1,13 @@
+moodle:
+  #image: moodle
+  build: .
+  volumes:
+   - moodledata:/var/moodledata
+  ports:
+   - "80:80"
+  environment:
+   - MOODLE_URL=http://127.0.0.1
+   - MOODLE_DB_HOST=localhost
+   - MOODLE_DB_NAME=moodle
+   - MOODLE_DB_USER=escolamodelo
+   - MOODLE_DB_PASS=escolamodelo
