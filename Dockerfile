@@ -45,7 +45,10 @@ RUN apk update \
 RUN cd /tmp \
  && git clone ${MOODLE_GITHUB} --depth=1 --branch EM_${ESCOLA_MODELO_VERSION} \
  && rm -rf /var/www/localhost/htdocs \
- && cd moodle && git submodule init && git submodule update & cd .. \
+ && cd moodle \
+ && git submodule init \
+ && git submodule update \ 
+ && cd .. \
  && mv /tmp/moodle /var/www/localhost/htdocs \
  && chown apache:apache -R /var/www/localhost/htdocs \
  && mkdir /run/apache2
