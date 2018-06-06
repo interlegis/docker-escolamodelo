@@ -38,8 +38,7 @@ $CFG = new stdClass();
 // will be stored.  This database must already have been created         //
 // and a username/password created to access it.                         //
 
-$CFG->urlTicketAPIURL = getenv('OSTICKET_API_URL');
-$CFG->urlTicketAPIKey = getenv('OSTICKET_API_KEY');
+$CFG->nomeCasaLegislativa = getenv('NOME_CASA_LEGISLATIVA');
 
 $CFG->dbtype    = 'pgsql';      // 'pgsql', 'mariadb', 'mysqli', 'mssql', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native';     // 'native' only at the moment

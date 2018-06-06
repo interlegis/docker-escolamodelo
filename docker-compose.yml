@@ -9,5 +9,6 @@ moodle:
    - MOODLE_URL=http://127.0.0.1
    - MOODLE_DB_HOST=localhost
    - MOODLE_DB_NAME=moodle
-   - MOODLE_DB_USER=escolamodelo
-   - MOODLE_DB_PASS=escolamodelo
+   - MOODLE_DB_USER=moodle
+   - MOODLE_DB_PASS=moodle
+   - NOME_CASA_LEGISLATIVA=Nome da Casa Legislativa
