@@ -7,7 +7,7 @@ moodle:
    - "80:80"
   environment:
    - MOODLE_URL=http://127.0.0.1
-   - MOODLE_DB_HOST=localhost
+   - MOODLE_DB_HOST=moodledb
    - MOODLE_DB_NAME=moodle
    - MOODLE_DB_USER=moodle
    - MOODLE_DB_PASS=moodle

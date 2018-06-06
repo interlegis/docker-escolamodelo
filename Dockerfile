@@ -7,7 +7,7 @@ ENV MOODLE_GITHUB=https://github.com/interlegis/moodle.git \
     MOODLE_DATA=/var/moodledata \
     MOODLE_REVERSEPROXY=false \
     MOODLE_SSLPROXY=false \
-    ESCOLA_MODELO_VERSION=3.4.2-1
+    ESCOLA_MODELO_VERSION=3.4.2-2
 
 EXPOSE 80
 
@@ -39,11 +39,13 @@ RUN apk update \
                        php7-opcache \
                        php7-tokenizer \
                        php7-simplexml \
-                       php7-ctype
+                       php7-ctype \
+                       php7-fileinfo
 
 RUN cd /tmp \
  && git clone ${MOODLE_GITHUB} --depth=1 --branch EM_${ESCOLA_MODELO_VERSION} \
  && rm -rf /var/www/localhost/htdocs \
+ && cd moodle && git submodule init && git submodule update & cd .. \
  && mv /tmp/moodle /var/www/localhost/htdocs \
  && chown apache:apache -R /var/www/localhost/htdocs \
  && mkdir /run/apache2
