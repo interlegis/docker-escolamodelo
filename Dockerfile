@@ -56,13 +56,15 @@ RUN cd /tmp \
 RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log \
  && ln -sf /proc/self/fd/1 /var/log/apache2/error.log
 
-#Desnecessário após instalação via CLI
-#COPY moodle-config.php /var/www/localhost/htdocs/config.php
 COPY 00_limits.ini /etc/php7/conf.d/00_limits.ini
 COPY 00_opcache.ini /etc/php7/conf.d/00_opcache.ini
 COPY install.sh /usr/local/bin
 COPY run.sh /opt/apache2/run.sh
 COPY crontab /etc/crontabs/root
 COPY startcron.sh /usr/local/bin
+
+CMD ["/usr/local/bin/install.sh"]
+
+COPY moodle-config.php /var/www/localhost/htdocs/config.php
 
 CMD ["/opt/apache2/run.sh"]

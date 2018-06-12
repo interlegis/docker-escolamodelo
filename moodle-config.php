@@ -38,14 +38,14 @@ $CFG = new stdClass();
 // will be stored.  This database must already have been created         //
 // and a username/password created to access it.                         //
 
-$CFG->nomeCasaLegislativa = getenv('NOME_CASA_LEGISLATIVA');
+$CFG->nomeCasaLegislativa = getenv('ESCOLA_MODELO_CASA_LEGISLATIVA');
 
 $CFG->dbtype    = 'pgsql';      // 'pgsql', 'mariadb', 'mysqli', 'mssql', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native';     // 'native' only at the moment
-$CFG->dbhost    = getenv('MOODLE_DB_HOST');  // eg 'localhost' or 'db.isp.com' or IP
-$CFG->dbname    = getenv('MOODLE_DB_NAME');     // database name, eg moodle
-$CFG->dbuser    = getenv('MOODLE_DB_USER');   // your database username
-$CFG->dbpass    = getenv('MOODLE_DB_PASS');   // your database password
+$CFG->dbhost    = getenv('ESCOLA_MODELO_DB_HOST');  // eg 'localhost' or 'db.isp.com' or IP
+$CFG->dbname    = getenv('ESCOLA_MODELO_DB_NAME');     // database name, eg moodle
+$CFG->dbuser    = getenv('ESCOLA_MODELO_DB_USER');   // your database username
+$CFG->dbpass    = getenv('ESCOLA_MODELO_DB_PASS');   // your database password
 $CFG->prefix    = 'mdl_';       // prefix to use for all table names
 $CFG->dboptions = array(
     'dbpersist' => false,       // should persistent database connections be
@@ -75,7 +75,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot   = getenv('MOODLE_URL');
+$CFG->wwwroot   = getenv('ESCOLA_MODELO_URL');
 
 
 //=========================================================================
@@ -91,7 +91,7 @@ $CFG->wwwroot   = getenv('MOODLE_URL');
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = getenv('MOODLE_DATA');
+$CFG->dataroot  = getenv('ESCOLA_MODELO_DATA');
 
 
 //=========================================================================
@@ -278,11 +278,11 @@ $CFG->admin = 'admin';
 //
 // Enable when setting up advanced reverse proxy load balancing configurations,
 // it may be also necessary to enable this when using port forwarding.
-$CFG->reverseproxy = filter_var(getenv('MOODLE_REVERSEPROXY'), FILTER_VALIDATE_BOOLEAN);
+$CFG->reverseproxy = filter_var(getenv('ESCOLA_MODELO_REVERSEPROXY'), FILTER_VALIDATE_BOOLEAN);
 //
 // Enable when using external SSL appliance for performance reasons.
 // Please note that site may be accessible via https: or https:, but not both!
-$CFG->sslproxy = filter_var(getenv('MOODLE_SSLPROXY'), FILTER_VALIDATE_BOOLEAN);
+$CFG->sslproxy = filter_var(getenv('ESCOLA_MODELO_SSLPROXY'), FILTER_VALIDATE_BOOLEAN);
 //
 // This setting will cause the userdate() function not to fix %d in
 // date strings, and just let them show with a zero prefix.
