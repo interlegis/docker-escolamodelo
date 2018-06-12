@@ -63,8 +63,6 @@ COPY run.sh /opt/apache2/run.sh
 COPY crontab /etc/crontabs/root
 COPY startcron.sh /usr/local/bin
 
-CMD ["/usr/local/bin/install.sh"]
-
-COPY moodle-config.php /var/www/localhost/htdocs/config.php
+COPY moodle-config.php /var/www/localhost/htdocs/
 
 CMD ["/opt/apache2/run.sh"]
