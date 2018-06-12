@@ -4,14 +4,14 @@ MAINTAINER Matheus Garcia <garcia.figueiredo@gmail.com>
 MAINTAINER Fabio Rauber <fabiorauber@gmail.com>
 
 ENV MOODLE_GITHUB=https://github.com/interlegis/moodle.git \
-    MOODLE_DATA=/var/moodledata \
+    MOODLE_DATA=/var/escolamodelodata \
     MOODLE_REVERSEPROXY=false \
     MOODLE_SSLPROXY=false \
     ESCOLA_MODELO_VERSION=3.4.2-2
 
 EXPOSE 80
 
-VOLUME ["/var/moodledata"]
+VOLUME ["/var/escolamodelodata"]
 
 RUN apk update \
  && apk add --no-cache \
@@ -56,9 +56,11 @@ RUN cd /tmp \
 RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log \
  && ln -sf /proc/self/fd/1 /var/log/apache2/error.log
 
-COPY moodle-config.php /var/www/localhost/htdocs/config.php
+#Desnecessário após instalação via CLI
+#COPY moodle-config.php /var/www/localhost/htdocs/config.php
 COPY 00_limits.ini /etc/php7/conf.d/00_limits.ini
 COPY 00_opcache.ini /etc/php7/conf.d/00_opcache.ini
+COPY install.sh /usr/local/bin
 COPY run.sh /opt/apache2/run.sh
 COPY crontab /etc/crontabs/root
 COPY startcron.sh /usr/local/bin

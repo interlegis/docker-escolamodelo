@@ -2,7 +2,7 @@ moodle:
   #image: moodle
   build: .
   volumes:
-   - moodledata:/var/moodledata
+   - escolamodelodata:/var/escolamodelodata
   ports:
    - "80:80"
   environment:
