@@ -7,7 +7,7 @@ ENV MOODLE_GITHUB=https://github.com/interlegis/moodle.git \
     MOODLE_DATA=/var/escolamodelodata \
     MOODLE_REVERSEPROXY=false \
     MOODLE_SSLPROXY=false \
-    ESCOLA_MODELO_VERSION=3.4.2-2
+    ESCOLA_MODELO_VERSION=3.4.2-3
 
 EXPOSE 80
 
