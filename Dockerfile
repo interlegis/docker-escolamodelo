@@ -3,10 +3,10 @@ FROM alpine:3.6
 MAINTAINER Matheus Garcia <garcia.figueiredo@gmail.com>
 MAINTAINER Fabio Rauber <fabiorauber@gmail.com>
 
-ENV MOODLE_GITHUB=https://github.com/interlegis/moodle.git \
-    MOODLE_DATA=/var/escolamodelodata \
-    MOODLE_REVERSEPROXY=false \
-    MOODLE_SSLPROXY=false \
+ENV ESCOLA_MODELO_GITHUB=https://github.com/interlegis/moodle.git \
+    ESCOLA_MODELO_DATA=/var/escolamodelodata \
+    ESCOLA_MODELO_REVERSEPROXY=false \
+    ESCOLA_MODELO_SSLPROXY=true \
     ESCOLA_MODELO_VERSION=3.4.2-3
 
 EXPOSE 80
@@ -43,7 +43,7 @@ RUN apk update \
                        php7-fileinfo
 
 RUN cd /tmp \
- && git clone ${MOODLE_GITHUB} --depth=1 --branch EM_${ESCOLA_MODELO_VERSION} \
+ && git clone ${ESCOLA_MODELO_GITHUB} --depth=1 --branch EM_${ESCOLA_MODELO_VERSION} \
  && rm -rf /var/www/localhost/htdocs \
  && cd moodle \
  && git submodule init \
