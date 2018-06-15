@@ -7,7 +7,7 @@ ENV ESCOLA_MODELO_GITHUB=https://github.com/interlegis/moodle.git \
     ESCOLA_MODELO_DATA=/var/escolamodelodata \
     ESCOLA_MODELO_REVERSEPROXY=false \
     ESCOLA_MODELO_SSLPROXY=true \
-    ESCOLA_MODELO_VERSION=3.4.2-3
+    ESCOLA_MODELO_VERSION=3.4.2-4
 
 EXPOSE 80
 
