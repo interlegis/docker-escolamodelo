@@ -59,7 +59,8 @@ RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log \
 COPY 00_limits.ini /etc/php7/conf.d/00_limits.ini
 COPY 00_opcache.ini /etc/php7/conf.d/00_opcache.ini
 COPY install.sh /usr/local/bin
-COPY run.sh /opt/apache2
+COPY run.sh /opt/apache2/run.sh
+
 COPY crontab /etc/crontabs/root
 COPY startcron.sh /usr/local/bin
 
