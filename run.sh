@@ -10,9 +10,10 @@ if [ ! -f /var/escolamodelodata/dummy ]; then
   echo "placeholder" > /var/escolamodelodata/dummy
   # instala o moodle, criando objetos no BD e gerando arquivo config.php
   /usr/local/bin/install.sh
-  # sobrescreve config.php gerado, uma vez que faltam configurações de proxy, dentre outras
-  cp /var/www/localhost/htdocs/moodle-config.php /var/www/localhost/htdocs/config.php
 fi
+
+# sobrescreve config.php gerado, uma vez que faltam configurações de proxy, dentre outras
+cp /var/www/localhost/htdocs/moodle-config.php /var/www/localhost/htdocs/config.php
 
 # Executa comando de upgrade, caso haja atualizações a serem realizadas
 /usr/bin/php /var/www/localhost/htdocs/admin/cli/upgrade.php --non-interactive

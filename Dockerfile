@@ -40,7 +40,8 @@ RUN apk update \
                        php7-tokenizer \
                        php7-simplexml \
                        php7-ctype \
-                       php7-fileinfo
+                       php7-fileinfo \
+		       php7-phar
 
 RUN cd /tmp \
  && git clone ${ESCOLA_MODELO_GITHUB} --depth=1 --branch EM_${ESCOLA_MODELO_VERSION} \
