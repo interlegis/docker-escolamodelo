@@ -44,6 +44,8 @@ $CFG->dbsessions='1';
 $CFG->nomeCasaLegislativa = getenv('ESCOLA_MODELO_CASA_LEGISLATIVA');
 $CFG->emURL = getenv('ESCOLA_MODELO_URL');
 $CFG->emSigla = getenv('ESCOLA_MODELO_SIGLA');
+$CFG->emURLEVL = getenv('ESCOLA_MODELO_URL_EVL');
+$CFG->emApplicationToken = getenv('ESCOLA_MODELO_APP_TOKEN');
 
 $CFG->dbtype    = 'pgsql';      // 'pgsql', 'mariadb', 'mysqli', 'mssql', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native';     // 'native' only at the moment
