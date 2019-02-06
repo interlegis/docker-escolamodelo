@@ -7,7 +7,7 @@ ENV ESCOLA_MODELO_GITHUB=https://github.com/interlegis/moodle.git \
     ESCOLA_MODELO_DATA=/var/escolamodelodata \
     ESCOLA_MODELO_REVERSEPROXY=false \
     ESCOLA_MODELO_SSLPROXY=true \
-    ESCOLA_MODELO_VERSION=3.4.2-6
+    ESCOLA_MODELO_VERSION=3.4.2-7
 
 EXPOSE 80
 
@@ -16,7 +16,8 @@ VOLUME ["/var/escolamodelodata"]
 RUN apk update \
  && apk add --no-cache \
                        dcron \
-                       git \
+                       vim \
+		       git \
                        apache2 \
                        php7 \
                        php7-apache2 \

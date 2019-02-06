@@ -45,6 +45,7 @@ $CFG->nomeCasaLegislativa = getenv('ESCOLA_MODELO_CASA_LEGISLATIVA');
 $CFG->emURL = getenv('ESCOLA_MODELO_URL');
 $CFG->emSigla = getenv('ESCOLA_MODELO_SIGLA');
 $CFG->emURLEVL = getenv('ESCOLA_MODELO_URL_EVL');
+$CFG->emURLWS = getenv('ESCOLA_MODELO_URL_WS');
 $CFG->emApplicationToken = getenv('ESCOLA_MODELO_APP_TOKEN');
 
 $CFG->dbtype    = 'pgsql';      // 'pgsql', 'mariadb', 'mysqli', 'mssql', 'sqlsrv' or 'oci'
@@ -98,7 +99,7 @@ $CFG->wwwroot   = getenv('ESCOLA_MODELO_URL');
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = getenv('ESCOLA_MODELO_DATA');
+$CFG->dataroot  = getenv("ESCOLA_MODELO_DATA");
 
 
 //=========================================================================
